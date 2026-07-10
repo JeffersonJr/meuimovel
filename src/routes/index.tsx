@@ -36,7 +36,7 @@ function Index() {
 
     setLoading(true);
 
-    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzsBg9Zvgblgl5SImgdM4glpXcBwIyFkxZXX_6C26CDQvXcbTGtaMTLbMc_xi1lTYST/exec";
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzslzI4pySgUVfyXREcbEhEfNdA5fv1bmOZWrOLjhZHmj1o2d2FhhF5KbRURwnEL2AW/exec";
 
     try {
       await fetch(WEB_APP_URL, {
