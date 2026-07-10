@@ -33,11 +33,11 @@ function Index() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !email.trim() || !phone.trim()) return;
-    
+
     setLoading(true);
 
-    const WEB_APP_URL = "https://script.google.com/a/macros/microsistec.com.br/s/AKfycbyVa7E1m2FRIO10gswpDJzDio0t1kupnLFQmd3I-wE7bzJ51ApQFK7Tom0HqQNX7Pmo/exec"; 
-    
+    const WEB_APP_URL = "https://script.google.com/a/macros/microsistec.com.br/s/AKfycbyVa7E1m2FRIO10gswpDJzDio0t1kupnLFQmd3I-wE7bzJ51ApQFK7Tom0HqQNX7Pmo/exec";
+
     try {
       await fetch(WEB_APP_URL, {
         method: "POST",
@@ -114,7 +114,7 @@ function Index() {
         <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground sm:mt-5 sm:text-base">
           Esqueça filtros infinitos, corretores lentos e burocracia sem fim.
           Estamos construindo algo que vai tornar os portais tradicionais peças
-          de museu. Ainda não podemos revelar <em className="text-foreground/90 not-italic font-semibold">como</em> — mas quem
+          de museu. Ainda não podemos revelar <em className="text-foreground/90 not-italic font-semibold">como</em> mas quem
           entrar agora será o primeiro a saber.
         </p>
 
@@ -160,7 +160,13 @@ function Index() {
               type="tel"
               required
               value={phone}
-              onChange={(e) => setPhone(e.target.value)}
+              onChange={(e) => {
+                let v = e.target.value.replace(/\D/g, "");
+                if (v.length > 11) v = v.slice(0, 11);
+                if (v.length > 2) v = `(${v.slice(0, 2)}) ${v.slice(2)}`;
+                if (v.length > 9) v = `${v.slice(0, 10)}-${v.slice(10)}`;
+                setPhone(v);
+              }}
               placeholder="Seu WhatsApp (com DDD)"
               className="h-11 w-full rounded-xl border border-input bg-card/60 px-4 py-2 text-sm text-foreground placeholder:text-muted-foreground/70 outline-none backdrop-blur transition focus:border-primary focus:ring-2 focus:ring-ring/40"
             />
