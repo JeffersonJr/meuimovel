@@ -36,7 +36,7 @@ function Index() {
 
     setLoading(true);
 
-    const WEB_APP_URL = "https://script.google.com/a/macros/microsistec.com.br/s/AKfycbzt6ue_cJCSNwcK0GXXXcJ2dUGzVaZLZdontGUhUKc/exec";
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzsBg9Zvgblgl5SImgdM4glpXcBwIyFkxZXX_6C26CDQvXcbTGtaMTLbMc_xi1lTYST/exec";
 
     try {
       await fetch(WEB_APP_URL, {
