@@ -57,6 +57,14 @@ function Index() {
 
   return (
     <main className="relative flex h-[100dvh] w-full items-center justify-center overflow-hidden bg-background px-4 sm:px-6">
+      {/* City Background */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.06] mix-blend-luminosity grayscale"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=2622&auto=format&fit=crop')"
+        }}
+      />
       {/* Background tech glow */}
       <div
         aria-hidden
